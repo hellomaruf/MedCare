@@ -16,6 +16,20 @@ module.exports = {
   },
   plugins: [require("daisyui")],
   daisyui: {
-    themes: ["light"], // Disable default themes
+    themes: ["light"], 
+    themes: [
+    
+      {
+        medcareTheme: {
+          "primary": "#2188C9",
+          "secondary": "#FFB205",
+          "accent": "#37cdbe",
+          "neutral": "#3d4451",
+          "base-100": "#ffffff",
+        },
+      },
+      "light",
+      "cupcake",
+    ],
   },
 };
