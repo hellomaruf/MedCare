@@ -4,7 +4,7 @@ import { FaUserDoctor } from "react-icons/fa6";
 import { FaCheckCircle } from "react-icons/fa";
 function About() {
   return (
-    <div className="grid grid-cols-2 max-w-7xl mx-auto my-20">
+    <div className="grid grid-cols-2 max-w-7xl mx-auto mt-24">
       <div className="relative">
         <Image
           className="rounded-tr-[100px] rounded-bl-[100px]  border-b-[15px] border-primary"
@@ -37,19 +37,19 @@ function About() {
           oral cavity, including the teeth, gums, and supporting structures.
         </p>
         <div className=" space-y-3">
-          <h4 className="flex items-center gap-2 ">
+          <h4 className="flex items-center gap-4 ">
             <FaCheckCircle className="text-primary text-2xl" />
             <span className="text-xl font-medium text-gray-800">Modern Equipment</span>
           </h4>
-          <h4 className="flex items-center gap-2 ">
+          <h4 className="flex items-center gap-4 ">
             <FaCheckCircle className="text-primary text-2xl" />
             <span className="text-xl font-medium text-gray-800">Easy Online Appointment</span>
           </h4>
-          <h4 className="flex items-center gap-2 ">
+          <h4 className="flex items-center gap-4 ">
             <FaCheckCircle className="text-primary text-2xl" />
             <span className="text-xl font-medium text-gray-800">Comfortable Clinic</span>
           </h4>
-          <h4 className="flex items-center gap-2 ">
+          <h4 className="flex items-center gap-4 ">
             <FaCheckCircle className="text-primary text-2xl" />
             <span className="text-xl font-medium text-gray-800">Always Monitored</span>
           </h4>
