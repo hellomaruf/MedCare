@@ -26,7 +26,7 @@ function Hero() {
             compassionate care.
           </p>
           <div className="">
-            <button className="btn btn-primary text-white">
+            <button className="btn btn-primary text-white transition hover:scale-x-110">
               All Services
             </button>
           </div>

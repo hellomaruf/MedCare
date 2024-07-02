@@ -10,7 +10,7 @@ function Navbar() {
   const [showDropMenu, setShowDropMenu] = useState(false);
 
   return (
-    <div className="bg-[#fff] z-20 py-3 backdrop-blur-lg bg-opacity-10 fixed w-full">
+    <div className="bg-[#fff] z-20 py-3 backdrop-blur-2xl bg-opacity-10 fixed w-full">
       <div className="navbar max-w-7xl mx-auto">
         <div className="navbar-start">
           <div className="dropdown">
@@ -37,11 +37,9 @@ function Navbar() {
             <Link href="/">Appointment</Link>
           </ul>
         </div>
-        <a className="btn btn-primary text-white">Sign In</a>
+        <a className="btn btn-primary text-white transition hover:scale-x-110">Sign In</a>
         </div>
-        <div className="">
-          hello 
-      </div>
+      
       </div>
 
       <div
