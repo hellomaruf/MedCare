@@ -10,8 +10,10 @@ import { usePathname } from "next/navigation";
 function Navbar() {
   const [showDropMenu, setShowDropMenu] = useState(false);
   const pathName = usePathname()
-  console.log(pathName);
   if (pathName === '/signin') {
+    return
+  }
+  if (pathName === '/signup') {
     return
   }
 

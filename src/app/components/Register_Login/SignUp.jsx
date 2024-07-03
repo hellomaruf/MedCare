@@ -1,12 +1,12 @@
-'use client'
+"use client";
 import Image from "next/image";
 import loginImg from "../../../asset/imgs/login.png";
-import facebook from '../../../asset/imgs/facebook.png'
-import google from '../../../asset/imgs/search.png'
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-function SignIn() {
-  const pathName = usePathname()
+function SignUp() {
+    const pathName = usePathname();
+    console.log(pathName);
+
   return (
     <div>
       <div className="grid grid-cols-2 items-center h-screen ">
@@ -23,7 +23,6 @@ function SignIn() {
         <div className="">
           <div className="mx-auto max-w-screen-xl px-4 py-16 sm:px-6 lg:px-8">
             <div className="mx-auto max-w-lg">
-      
               <div className=" bg-gray-50 rounded-3xl">
                 <div className=" flex item-center gap-5 pt-6 px-4">
                 <Link href='/signin' className={pathName==='/signin'?'font-semibold':'text-gray-500'}>Sign In</Link>
@@ -35,9 +34,39 @@ function SignIn() {
                   className="mb-0 mt-6 space-y-4 rounded-3xl p-4 bg-white shadow-lg sm:p-6 lg:p-8"
                 >
                   <p className="text-center text-lg font-medium">
-                    Sign in to your account
+                    Sign Up to your account
                   </p>
 
+                  <div>
+                    <label htmlFor="name" className="sr-only">
+                      Name
+                    </label>
+
+                    <div className="relative">
+                      <input
+                        type="text"
+                        className="w-full rounded-lg border-gray-200 p-4 pe-12 text-sm shadow-sm"
+                        placeholder="Enter Name"
+                      />
+
+                      <span className="absolute inset-y-0 end-0 grid place-content-center px-4">
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          className="size-4 text-gray-400"
+                          fill="none"
+                          viewBox="0 0 24 24"
+                          stroke="currentColor"
+                        >
+                          <path
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            strokeWidth="2"
+                            d="M16 12a4 4 0 10-8 0 4 4 0 008 0zm0 0v1.5a2.5 2.5 0 005 0V12a9 9 0 10-9 9m4.5-1.206a8.959 8.959 0 01-4.5 1.207"
+                          />
+                        </svg>
+                      </span>
+                    </div>
+                  </div>
                   <div>
                     <label htmlFor="email" className="sr-only">
                       Email
@@ -110,13 +139,8 @@ function SignIn() {
                     type="submit"
                     className="block w-full rounded-lg bg-primary px-5 py-3 text-sm font-medium text-white"
                   >
-                    Sign in
+                    Sign Up
                   </button>
-                  <div className="divider text-sm py-4">Continue with Google or Facebook</div>
-                  <div className="flex gap-4 item-center justify-center">
-                    <button className='btn bg-white border-2 border-gray-300'><Image src={google} alt={'facebook'} width={20} height={20}/> Google</button>
-                    <button className='btn bg-white border-2 border-gray-300'><Image src={facebook} alt={'facebook'} width={20} height={20}/> Facebook</button>
-                  </div>
                 </form>
               </div>
             </div>
@@ -127,4 +151,4 @@ function SignIn() {
   );
 }
 
-export default SignIn;
+export default SignUp;
