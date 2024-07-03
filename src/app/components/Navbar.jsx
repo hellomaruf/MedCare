@@ -5,9 +5,15 @@ import Link from "next/link";
 import { AiOutlineClose } from "react-icons/ai";
 import { AiOutlineBars } from "react-icons/ai";
 import { useState } from "react";
+import { usePathname } from "next/navigation";
 
 function Navbar() {
   const [showDropMenu, setShowDropMenu] = useState(false);
+  const pathName = usePathname()
+  console.log(pathName);
+  if (pathName === '/signin') {
+    return
+  }
 
   return (
     <div className="bg-[#fff] z-20 py-3 backdrop-blur-2xl bg-opacity-10 fixed w-full">
@@ -37,7 +43,7 @@ function Navbar() {
             <Link href="/">Appointment</Link>
           </ul>
         </div>
-        <a className="btn btn-primary text-white transition hover:scale-x-110">Sign In</a>
+        <Link href='/signin' className="btn btn-primary text-white transition hover:scale-x-110">Sign In</Link>
         </div>
       
       </div>
