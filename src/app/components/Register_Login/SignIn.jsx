@@ -5,6 +5,7 @@ import facebook from '../../../asset/imgs/facebook.png'
 import google from '../../../asset/imgs/search.png'
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { IoArrowBackCircleOutline } from "react-icons/io5";
 function SignIn() {
   const pathName = usePathname()
   return (
@@ -20,7 +21,7 @@ function SignIn() {
             strategies. Phosfluorescently synergize installed base
           </p>
         </div>
-        <div className="">
+        <div className=" relative">
           <div className="mx-auto max-w-screen-xl px-4 py-16 sm:px-6 lg:px-8">
             <div className="mx-auto max-w-lg">
       
@@ -120,6 +121,10 @@ function SignIn() {
                 </form>
               </div>
             </div>
+          </div>
+          <div>
+
+          <Link className='absolute -top-2 right-6 flex items-center gap-2 text-[#1F88C9]' href='/'><IoArrowBackCircleOutline className='text-2xl' /> Back to Home</Link>
           </div>
         </div>
       </div>

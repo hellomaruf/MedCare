@@ -3,10 +3,9 @@ import Image from "next/image";
 import loginImg from "../../../asset/imgs/login.png";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { IoArrowBackCircleOutline } from "react-icons/io5";
 function SignUp() {
     const pathName = usePathname();
-    console.log(pathName);
-
   return (
     <div>
       <div className="grid grid-cols-2 items-center h-screen ">
@@ -36,7 +35,6 @@ function SignUp() {
                   <p className="text-center text-lg font-medium">
                     Sign Up to your account
                   </p>
-
                   <div>
                     <label htmlFor="name" className="sr-only">
                       Name
@@ -71,7 +69,6 @@ function SignUp() {
                     <label htmlFor="email" className="sr-only">
                       Email
                     </label>
-
                     <div className="relative">
                       <input
                         type="email"
@@ -145,6 +142,7 @@ function SignUp() {
               </div>
             </div>
           </div>
+          <Link className='absolute top-10 right-6 flex items-center gap-2 text-[#1F88C9]' href='/'><IoArrowBackCircleOutline className='text-2xl' /> Back to Home</Link>
         </div>
       </div>
     </div>
