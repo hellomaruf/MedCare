@@ -1,3 +1,4 @@
+
 import { Poppins } from "next/font/google";
 import "./globals.css";
 import Navbar from "./components/Navbar";
@@ -14,6 +15,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en" data-theme='medcareTheme'>
       <body className={poppins.className}>
+
         <AuthProvider>
         <Navbar/>
         {children}

@@ -6,15 +6,18 @@ import { AiOutlineClose } from "react-icons/ai";
 import { AiOutlineBars } from "react-icons/ai";
 import { useState } from "react";
 import { usePathname } from "next/navigation";
+import { signOut, useSession } from "next-auth/react";
 
 function Navbar() {
   const [showDropMenu, setShowDropMenu] = useState(false);
-  const pathName = usePathname()
-  if (pathName === '/signin') {
-    return
+ const session = useSession()
+ console.log(session);
+  const pathName = usePathname();
+  if (pathName === "/signin") {
+    return;
   }
-  if (pathName === '/signup') {
-    return
+  if (pathName === "/signup") {
+    return;
   }
 
   return (
@@ -37,17 +40,23 @@ function Navbar() {
           </div>
         </div>
         <div className="navbar-end flex gap-6">
-
-        <div className=" hidden lg:flex">
-          <ul className="menu menu-horizontal gap-4 px-1">
-            <Link href="/">Home</Link>
-            <Link href="/">About</Link>
-            <Link href="/">Appointment</Link>
-          </ul>
+          <div className=" hidden lg:flex">
+            <ul className="menu menu-horizontal gap-4 px-1">
+              <Link href="/">Home</Link>
+              <Link href="/">About</Link>
+              <Link href="/">Appointment</Link>
+            </ul>
+          </div>
+          {
+            session?.data ? <button onClick={()=> signOut()} className="btn btn-primary text-white transition hover:scale-x-110">Logout</button> :<Link
+            href="/signin"
+            className="btn btn-primary text-white transition hover:scale-x-110"
+          >
+            Sign In
+          </Link>
+          }
+        
         </div>
-        <Link href='/signin' className="btn btn-primary text-white transition hover:scale-x-110">Sign In</Link>
-        </div>
-      
       </div>
 
       <div

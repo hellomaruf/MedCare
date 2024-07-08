@@ -4,8 +4,29 @@ import loginImg from "../../../asset/imgs/login.png";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { IoArrowBackCircleOutline } from "react-icons/io5";
+
 function SignUp() {
-    const pathName = usePathname();
+  const pathName = usePathname();
+const handleSignUp = async(e)=>{
+  e.preventDefault()
+  console.log('hello bro')
+const name = e.target.name.value
+const email = e.target.email.value
+const password = e.target.password.value
+const newUser = {name, email, password}
+console.log(newUser)
+const resp = await fetch('http://localhost:3000/signup/api',{
+  method:'POST',
+  body:JSON.stringify(newUser),
+  header:{
+    "content-type":"application/json"
+  }
+})
+console.log(resp)
+if(resp.status === 200){
+  e.target.reset()
+}
+}
   return (
     <div>
       <div className="grid grid-cols-2 items-center h-screen ">
@@ -24,11 +45,26 @@ function SignUp() {
             <div className="mx-auto max-w-lg">
               <div className=" bg-gray-50 rounded-3xl">
                 <div className=" flex item-center gap-5 pt-6 px-4">
-                <Link href='/signin' className={pathName==='/signin'?'font-semibold':'text-gray-500'}>Sign In</Link>
-                <Link href='/signup' className={pathName==='/signup'?'font-semibold':'text-gray-500'}>Sign Up</Link>
+                  <Link
+                    href="/signin"
+                    className={
+                      pathName === "/signin" ? "font-semibold" : "text-gray-500"
+                    }
+                  >
+                    Sign In
+                  </Link>
+                  <Link
+                    href="/signup"
+                    className={
+                      pathName === "/signup" ? "font-semibold" : "text-gray-500"
+                    }
+                  >
+                    Sign Up
+                  </Link>
                 </div>
                 {/* <p className='text-sm pt-2 pl-4'>If you have not registered then click on sign up button</p> */}
                 <form
+                onSubmit={handleSignUp}
                   action="#"
                   className="mb-0 mt-6 space-y-4 rounded-3xl p-4 bg-white shadow-lg sm:p-6 lg:p-8"
                 >
@@ -43,6 +79,7 @@ function SignUp() {
                     <div className="relative">
                       <input
                         type="text"
+                        name="name"
                         className="w-full rounded-lg border-gray-200 p-4 pe-12 text-sm shadow-sm"
                         placeholder="Enter Name"
                       />
@@ -72,6 +109,7 @@ function SignUp() {
                     <div className="relative">
                       <input
                         type="email"
+                        name='email'
                         className="w-full rounded-lg border-gray-200 p-4 pe-12 text-sm shadow-sm"
                         placeholder="Enter email"
                       />
@@ -103,6 +141,7 @@ function SignUp() {
                     <div className="relative">
                       <input
                         type="password"
+                        name='password'
                         className="w-full rounded-lg border-gray-200 p-4 pe-12 text-sm shadow-sm"
                         placeholder="Enter password"
                       />
@@ -142,7 +181,12 @@ function SignUp() {
               </div>
             </div>
           </div>
-          <Link className='absolute top-10 right-6 flex items-center gap-2 text-[#1F88C9]' href='/'><IoArrowBackCircleOutline className='text-2xl' /> Back to Home</Link>
+          <Link
+            className="absolute top-10 right-6 flex items-center gap-2 text-[#1F88C9]"
+            href="/"
+          >
+            <IoArrowBackCircleOutline className="text-2xl" /> Back to Home
+          </Link>
         </div>
       </div>
     </div>
