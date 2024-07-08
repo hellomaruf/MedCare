@@ -5,11 +5,13 @@ import facebook from "../../../asset/imgs/facebook.png";
 import google from "../../../asset/imgs/search.png";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { signIn } from "next-auth/react";
 import { IoArrowBackCircleOutline } from "react-icons/io5";
-import {signIn} from "next-auth/react";
+import { useRouter } from "next/navigation";
+// import {signIn} from "next-auth/react";
 function SignIn() {
   const pathName = usePathname();
-  
+  const router = useRouter();
   const handleLogin = async (e) => {
     e.preventDefault();
     const email = e.target.email.value;
@@ -18,10 +20,20 @@ function SignIn() {
     const resp = await signIn("credentials", {
       email,
       password,
-      redirect: false
+      redirect: false,
     });
-    console.log(resp)
-  
+    console.log(resp);
+    if (resp?.status === 200) {
+      router.push("/");
+    }
+  };
+  const handleSocialLogin = (provider) => {
+    console.log(provider)
+    const resp = signIn(provider);
+    console.log(resp);
+    if (resp?.status === 'authenticated') {
+      router.push('/')
+    }
   };
   return (
     <div>
@@ -144,30 +156,33 @@ function SignIn() {
                   >
                     Sign in
                   </button>
-                  <div className="divider text-sm py-4">
-                    Continue with Google or Facebook
-                  </div>
-                  <div className="flex gap-4 item-center justify-center">
-                    <button className="btn bg-white border-2 border-gray-300">
-                      <Image
-                        src={google}
-                        alt={"facebook"}
-                        width={20}
-                        height={20}
-                      />{" "}
-                      Google
-                    </button>
-                    <button className="btn bg-white border-2 border-gray-300">
-                      <Image
-                        src={facebook}
-                        alt={"facebook"}
-                        width={20}
-                        height={20}
-                      />{" "}
-                      Facebook
-                    </button>
-                  </div>
                 </form>
+                <div className="divider text-sm py-4">
+                  Continue with Google or Facebook
+                </div>
+                <div className="flex gap-4 item-center justify-center">
+                  <button
+                    onClick={() => handleSocialLogin("google")}
+                    className="btn bg-white border-2 border-gray-300"
+                  >
+                    <Image
+                      src={google}
+                      alt={"facebook"}
+                      width={20}
+                      height={20}
+                    />{" "}
+                    Google
+                  </button>
+                  <button  onClick={() => handleSocialLogin("github")} className="btn bg-white border-2 border-gray-300">
+                    <Image
+                      src={facebook}
+                      alt={"facebook"}
+                      width={20}
+                      height={20}
+                    />{" "}
+                    Facebook
+                  </button>
+                </div>
               </div>
             </div>
           </div>
