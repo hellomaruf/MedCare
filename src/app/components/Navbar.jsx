@@ -7,6 +7,8 @@ import { AiOutlineBars } from "react-icons/ai";
 import { useState } from "react";
 import { usePathname } from "next/navigation";
 import { signOut, useSession } from "next-auth/react";
+import Layout from "../(dashboard)/dashboard/layout";
+
 
 function Navbar() {
   const [showDropMenu, setShowDropMenu] = useState(false);
@@ -18,6 +20,9 @@ function Navbar() {
   }
   if (pathName === "/signup") {
     return;
+  }
+  if (pathName.includes('dashboard')) {
+    return <Layout/>
   }
 
   return (
@@ -45,6 +50,7 @@ function Navbar() {
               <Link href="/">Home</Link>
               <Link href="/">About</Link>
               <Link href="/">Appointment</Link>
+              <Link href="/dashboard">Dashboard</Link>
             </ul>
           </div>
           {
