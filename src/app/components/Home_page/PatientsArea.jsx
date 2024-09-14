@@ -1,55 +1,59 @@
 import { HoverEffect } from "../ui/card-hover-effect";
 
-
 function PatientsArea() {
-
   return (
-      <div className="max-w-7xl mx-auto px-8 mt-20">
-          <div className="">
-              <h2 className="text-4xl  text-gray-800 mx-auto text-center max-w-xl">We Serve Defferent <span className="font-semibold">Area for our Patients</span></h2>
-          </div>
-    <HoverEffect items={projects} />
-  </div>
-  )
+    <div className="max-w-7xl mx-auto px-8 mt-32 z-0">
+      <div className="">
+      <p className="text-secondary text-lg tracking-widest text-center mb-5">
+          --Patients Services--
+        </p>
+        <h2 className="text-4xl  text-gray-800 mx-auto text-center max-w-xl">
+          We Serve Defferent{" "}
+          <span className="font-semibold">Areas for our Patients</span>
+        </h2>
+      </div>
+      <HoverEffect items={projects} />
+    </div>
+  );
 }
 
-export default PatientsArea
+export default PatientsArea;
 
 export const projects = [
   {
-    title: "Stripe",
+    title: "In-Clinic Care",
     description:
-      "A technology company that builds economic infrastructure for the internet.",
+      "Comprehensive medical consultations and treatments provided in our state-of-the-art clinics.",
     link: "https://stripe.com",
   },
   {
-    title: "Netflix",
+    title: "Home Healthcare",
     description:
-      "A streaming service that offers a wide variety of award-winning TV shows, movies, anime, documentaries, and more on thousands of internet-connected devices.",
+      "For patients who prefer or require care at home, we provide home visits by our experienced healthcare professionals.",
     link: "https://netflix.com",
   },
   {
-    title: "Google",
+    title: "Telemedicine Services",
     description:
-      "A multinational technology company that specializes in Internet-related services and products.",
+      "Virtual consultations to connect patients with doctors and specialists from the comfort of their homes.",
     link: "https://google.com",
   },
   {
-    title: "Meta",
+    title: "Emergency Care",
     description:
-      "A technology company that focuses on building products that advance Facebook's mission of bringing the world closer together.",
+      "Fast and efficient emergency response teams available across multiple regions.",
     link: "https://meta.com",
   },
   {
-    title: "Amazon",
+    title: "Specialized Care",
     description:
-      "A multinational technology company focusing on e-commerce, cloud computing, digital streaming, and artificial intelligence.",
+      "We offer specialized care in various fields, including cardiology, orthopedics, pediatrics, and more.",
     link: "https://amazon.com",
   },
   {
-    title: "Microsoft",
+    title: "Primary Care Services",
     description:
-      "A multinational technology company that develops, manufactures, licenses, supports, and sells computer software, consumer electronics, personal computers, and related services.",
+      "Our primary care services cover routine health check-ups, preventive care, and ongoing management",
     link: "https://microsoft.com",
   },
 ];

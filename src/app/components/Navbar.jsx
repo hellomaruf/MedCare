@@ -26,7 +26,7 @@ function Navbar() {
   }
 
   return (
-    <div className="bg-[#fff] z-20 py-3 backdrop-blur-2xl bg-opacity-10 fixed w-full">
+    <div className="bg-[#fff]  py-3 backdrop-blur-2xl bg-opacity-10 fixed w-full z-50">
       <div className="navbar max-w-7xl mx-auto">
         <div className="navbar-start">
           <div className="dropdown">
@@ -41,7 +41,7 @@ function Navbar() {
             </div>
           </div>
           <div className="">
-            <Image src={logo} alt="logo-img" height={250} width={250}></Image>
+            <Image src={logo} alt="logo-img" height={200} width={200}></Image>
           </div>
         </div>
         <div className="navbar-end flex gap-6">

@@ -48,7 +48,7 @@ export const Card = ({ className, children }) => {
   return (
     <div
       className={cn(
-        "rounded-2xl h-full w-full p-4 overflow-hidden border-2 border-gray-400 bg-white  relative z-20",
+        "rounded-2xl h-full w-full p-4 overflow-hidden border-2 border-gray-200 bg-white  relative z-20",
         className
       )}
     >
