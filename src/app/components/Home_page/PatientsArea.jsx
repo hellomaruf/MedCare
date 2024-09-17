@@ -2,7 +2,7 @@ import { HoverEffect } from "../ui/card-hover-effect";
 
 function PatientsArea() {
   return (
-    <div className="max-w-7xl mx-auto px-8 mt-32 z-0">
+    <div className="max-w-7xl mx-auto mt-32 z-0">
       <div className="">
       <p className="text-secondary text-lg tracking-widest text-center mb-5">
           --Patients Services--
