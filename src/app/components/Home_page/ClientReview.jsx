@@ -9,6 +9,7 @@ import Image from "next/image";
 import face1 from "../../assets/Images/face1.png";
 import face2 from "../../assets/Images/face2.png";
 import face3 from "../../assets/Images/face3.png";
+import { Rate } from "antd";
 
 function ClientReview() {
   return (
@@ -18,7 +19,7 @@ function ClientReview() {
           <h3 className="text-secondary text-lg tracking-widest ">
             --EXPERIENCE--
           </h3>
-          <h1 className="text-3xl font-medium">
+          <h1 className="text-3xl font-semibold text-gray-900">
             What Our Patients Say about Us
           </h1>
           <p className="text-gray-500">
@@ -54,8 +55,9 @@ function ClientReview() {
                         height={300}
                       />
                     </div>
-                    <div className="">
+                    <div className=" space-y-1">
                       <h3 className="font-semibold">Emma J.</h3>
+                      <Rate disabled defaultValue={4} />
                     </div>
                   </div>
                 </div>
@@ -78,8 +80,9 @@ function ClientReview() {
                         height={300}
                       />
                     </div>
-                    <div className="">
+                    <div className="space-y-1">
                       <h3 className="font-semibold">Lisa P</h3>
+                      <Rate disabled defaultValue={5} />
                     </div>
                   </div>
                 </div>
@@ -101,8 +104,9 @@ function ClientReview() {
                         height={300}
                       />
                     </div>
-                    <div className="">
+                    <div className="space-y-1">
                       <h3 className="font-semibold">Michael R.</h3>
+                      <Rate disabled defaultValue={4} />
                     </div>
                   </div>
                 </div>
