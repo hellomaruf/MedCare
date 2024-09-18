@@ -4,6 +4,7 @@ import About from "./components/Home_page/About";
 // import Feedback from "./components/Home_page/Feedback";
 import PatientsArea from "./components/Home_page/PatientsArea";
 import ClientReview from "./components/Home_page/ClientReview";
+import Doctors from "./components/Home_page/Doctors";
 
 export default function Home() {
   return (
@@ -13,6 +14,7 @@ export default function Home() {
       {/* <Feedback/> */}
       <PatientsArea />
       <ClientReview/>
+      <Doctors/>
     </main>
   );
 }

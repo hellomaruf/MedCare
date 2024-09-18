@@ -57,7 +57,7 @@ function ClientReview() {
                     </div>
                     <div className=" space-y-1">
                       <h3 className="font-semibold">Emma J.</h3>
-                      <Rate disabled defaultValue={4} />
+                      <Rate className='text-lg' disabled defaultValue={4} />
                     </div>
                   </div>
                 </div>
@@ -82,7 +82,7 @@ function ClientReview() {
                     </div>
                     <div className="space-y-1">
                       <h3 className="font-semibold">Lisa P</h3>
-                      <Rate disabled defaultValue={5} />
+                      <Rate className='text-lg' disabled defaultValue={5} />
                     </div>
                   </div>
                 </div>
@@ -106,7 +106,7 @@ function ClientReview() {
                     </div>
                     <div className="space-y-1">
                       <h3 className="font-semibold">Michael R.</h3>
-                      <Rate disabled defaultValue={4} />
+                      <Rate className="text-lg" disabled defaultValue={4} />
                     </div>
                   </div>
                 </div>
