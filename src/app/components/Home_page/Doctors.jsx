@@ -39,7 +39,7 @@ function Doctors() {
   console.log(doctorsInfo?.img);
   return (
     <div>
-      <div className="mt-20 max-w-7xl mx-auto ">
+      <div className="mt-20 mb-16 max-w-7xl mx-auto ">
         <h3 className="text-4xl font-semibold text-gray-800 text-center">
           Our Expert Doctors
         </h3>
