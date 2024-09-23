@@ -71,10 +71,12 @@ function SignIn() {
                   </Link>
                 </div>
                 {/* <p className='text-sm pt-2 pl-4'>If you have not registered then click on sign up button</p> */}
+                <div className="bg-white shadow-lg pb-6 rounded-3xl">
+
                 <form
                   onSubmit={handleLogin}
                   action="#"
-                  className="mb-0 mt-6 space-y-4 rounded-3xl p-4 bg-white shadow-lg sm:p-6 lg:p-8"
+                  className="mb-0 mt-6 space-y-4 rounded-3xl p-4  sm:p-6 lg:p-8"
                 >
                   <p className="text-center text-lg font-medium">
                     Sign in to your account
@@ -156,7 +158,8 @@ function SignIn() {
                   >
                     Sign in
                   </button>
-                </form>
+                  </form>
+                  
                 <div className="divider text-sm py-4">
                   Continue with Google or Facebook
                 </div>
@@ -182,6 +185,7 @@ function SignIn() {
                     />{" "}
                     Facebook
                   </button>
+                </div>
                 </div>
               </div>
             </div>
