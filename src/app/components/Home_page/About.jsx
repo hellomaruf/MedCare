@@ -49,7 +49,7 @@ function About() {
             <FaCheckCircle className="text-primary text-2xl" />
             <span className="text-xl font-medium text-gray-800">Comfortable Clinic</span>
           </h4>
-          <h4 className="flex items-center gap-4 ">
+          <h4 className="flex items-center gap-4  ">
             <FaCheckCircle className="text-primary text-2xl" />
             <span className="text-xl font-medium text-gray-800">Always Monitored</span>
           </h4>
